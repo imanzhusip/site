@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Менің проектім</title>
+  <link rel="stylesheet" href="css/main.css">
+<style>
+@import url('https://fonts.googleapis.com/css?family=Roboto|Suez+One');
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: #fafafa;
+  font-family: Trebuchet MS, Helvetica;
+}
+
+/* Шапка сайта */
+
+header {
+  width: 100%;
+  padding: 10px 0.5% 0px 0.5%;
+  background: transparent;
+  float: left;
+  position: fixed;
+}
+
+header #logo {
+  color: #fff;
+  cursor: pointer;
+}
+
+header #logo span {
+  font-size: 1.7em;
+  line-height: 45px;
+  margin-left: 40px;
+  font-family: 'Suez One', serif;
+}
+
+@media (min-width: 701px) {
+  #logo {
+    float: left;
+    width: 30%;
+    font-size: 1.1em;
+  }
+
+  #about {
+    float: right;
+    width: 67%;
+  }
+}
+
+@media (max-width: 700px) {
+  #logo {
+    margin-top: 15px;
+    width: 100%;
+    font-size: 1.5em;
+  }
+
+  #about {
+    float: left;
+    width: 100%;
+  }
+}
+
+#about {
+  text-align: center;
+  font-size: 1em;
+  line-height: 40px;
+  margin-bottom: 10px;
+}
+
+#about > a {color: #fff}
+
+#about > a:hover {
+  color: #b0b0b0;
+  text-decoration: underline;
+}
+
+#about > a:not(:last-child) {
+  margin-right: 7%;
+}
+
+/* Стили для фиксированной шапки */
+
+.fixed {
+  z-index: 5000;
+  background-color: #fff;
+  border-bottom: 1px solid silver;
+}
+
+header.fixed #logo {
+  color: #343434;
+}
+
+.fixed #about a {color: #343434}
+.fixed #about a:hover {color: #7c7c7c}
+
+/* Главный блок на сайте */
+
+#top {
+  width: 100%;
+  background-image: url(https://images.unsplash.com/photo-1623208578388-dc9e20f97132?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+  background-blend-mode: multiply;
+  background-color: #2e3a44;
+  background-size: cover;
+  text-align: center;
+  color: #fff;
+}
+
+@media (min-width: 1001px) {
+  #top {
+    font-size: 3em;
+    height: 1000px;
+  }
+}
+
+@media (max-width: 1000px) and (min-width: 651px) {
+  #top {
+    font-size: 2em;
+    height: 600px;
+  }
+}
+
+@media (max-width: 650px) {
+  #top {
+    font-size: 1.3em;
+    padding-top: 50%;
+    height: 500px;
+  }
+}
+
+@media (max-width: 450px) {
+  #top {
+    font-size: 0.9em;
+  }
+}
+
+#top h1 {
+  padding-top: 20%;
+}
+
+#top h3 {
+  color: #ccc;
+}
+
+/* Блок с возможностями */
+
+#main {
+  float: left;
+  background-color: #f6f6f6;
+  border-top: 2px solid silver;
+  color: #484848;
+  font-size: 1.3em;
+}
+
+@media (min-width: 1401px) {
+  #main {
+    padding: 100px 20%;
+    width: 60%;
+  }
+}
+
+@media (max-width: 1400px) {
+  #main {
+    padding: 100px 10%;
+    width: 80%;
+  }
+}
+
+@media (max-width: 700px) {
+  #main div {
+    width: 98%!important;
+    margin-bottom: 20px;
+  }
+}
+
+#main div {
+  width: 48%;
+  margin-right: 2%;
+  float: left;
+}
+
+#main h2 {font-size: 3em}
+#main span {color: #a0a0a0}
+
+/* Блок с преимуществами */
+
+#overview {
+  float: left;
+  background-image: url(https://images.unsplash.com/photo-1591088761584-d3f8540fc587?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+
+  background-blend-mode: multiply;
+  background-color: #403f40;
+  background-size: cover;
+  background-attachment: fixed;
+
+  padding: 100px 0;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
+
+#overview h2 {font-size: 4em}
+#overview h4 {color: #ccc; font-size: 1.5em}
+
+@media (min-width: 561px) {
+  #overview h2 {font-size: 4em}
+}
+
+@media (max-width: 560px) {
+  #overview h2 {font-size: 2em}
+}
+
+#overview .img {
+  float: left;
+  width: 30%;
+  margin-right: 5%;
+  margin-top: 50px;
+}
+
+#overview .img:nth-child(odd) {
+  margin-left: 18%;
+}
+
+#overview img {
+  background: #fafafa;
+  padding: 5px;
+  border: 2px solid silver;
+  float: left;
+  width: 100%;
+  max-width: 500px;
+}
+
+#overview span {
+  float: left;
+  width: 100%;
+  font-size: 2em;
+  margin-top: 10px;
+}
+
+@media (max-width: 700px) {
+  #overview .img {
+    width: 80%!important;
+    margin-right: 0!important;
+    margin-left: 10%!important;
+  }
+}
+
+/* Блок с контактами */
+#contacts {
+  width: 100%;
+  float: left;
+  padding-bottom: 40px;
+  padding-top: 70px;
+  border-top: 4px solid #ccc;
+  background: #f4f4f4;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Roboto Slab', serif;
+  font-weight: lighter;
+}
+
+#contacts h5 {font-size: 3em; color: #4f4f4f}
+
+#form_input {
+  margin-top: 15px;
+  font-size: 1.1em;
+}
+
+@media (min-width: 1051px) {
+  #form_input {
+    width: 35%;
+    margin-left: 38%;
+  }
+}
+
+@media (max-width: 1050px) {
+  #form_input {
+    width: 90%;
+    margin-left: 10%;
+  }
+}
+
+#form_input label {
+  color: #505050;
+  cursor: pointer;
+  font-size: 1.4em;
+  font-family: 'Roboto Slab', serif;
+}
+
+#form_input label > span {
+  color: #e87e7e;
+}
+
+#form_input input,#form_input textarea {
+  margin-bottom: 10px;
+  width: 70%;
+  padding: 10px 2%;
+  border-radius: 7px;
+  border: 2px solid silver;
+  font-size: 0.9em;
+  color: #4a4a4a;
+}
+
+#form_input input:focus, #form_input textarea:focus {
+  border-color: #333;
+}
+
+.btn {
+  float: left;
+  border-radius: 5px;
+  padding: 5px 9px;
+  font-size: 1.2em;
+  background-color: #ec6550;
+  text-shadow: #454545 0 0 2px;
+  cursor: pointer;
+  color: white;
+  font-family: 'Roboto Slab', serif;
+}
+
+.btn:hover {
+  background-color: #c15443;
+}
+
+/* Вопросы и ответы */
+
+#faq {
+  background-color: #fff;
+  border-top: 2px dashed #e4e3e3;
+  width: 100%;
+  float: left;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+@media (min-width: 801px) {
+  #faq div {
+    width: 25%;
+    margin-left: 6%;
+    float: left;
+  }
+}
+
+@media (max-width: 800px) {
+  #faq div {
+    width: 80%;
+    margin-left: 10%;
+    float: left;
+  }
+}
+
+#faq .title {
+  font-weight: lighter;
+  color: #a3a0ad;
+  margin-bottom: 20px;
+  font-size: 2.2em;
+}
+
+#faq .heading {
+  color: #7d7d7d;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+#faq p {
+  font-family: Arimo, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #4a4a4a;
+  font-size: 0.95em;
+  margin-bottom: 40px;
+}
+</style>
+</head>
+<body>
+  <header>
+    <div id="logo" onclick="slowScroll('#top')">
+      <span>Home</span>
+    </div>
+    <div id="about">
+      <a href="#" title="Возможности" onclick="slowScroll('#main')">Возможности</a>
+      <a href="#" onclick="slowScroll('#overview')" title="Преимущества">Преимущества</a>
+      <a href="#" onclick="slowScroll('#contacts')" title="Контакты">Контакты</a>
+      <a href="#" onclick="slowScroll('#faq')" title="Ответы на вопросы">FAQ</a>
+      <a href="file:///C:/Users/Asus/Desktop/web%20filters.html" title="Фильтрлер">Фильтрлер</a>
+      
+    </div>
+  </header>
+
+  <div id="top">
+    <h1>ASUS</h1>
+    <h3>VivoBook 15</h3>
+  </div>
+
+  <div id="main">
+    <div class="intro">
+      <h2>ASUS VivoBook 15</h2>
+      <span>Моя работа, мой путь</span>
+    </div>
+    <div class="text">
+      <span>Благодаря ярким цветам и клавише ввода с цветовой блокировкой ASUS VivoBook 15 добавляет изюминку и динамизм в повседневную работу. Благодаря новейшему процессору AMD Ryzen ™ 7 4700U VivoBook 15 обеспечивает мощность, необходимую для выполнения задач. Он также имеет конструкцию с двумя хранилищами, которая сочетает в себе высокую скорость передачи данных SSD с большой емкостью жесткого диска, что дает вам лучшее из обоих миров для повышения производительности.</span>
+    </div>
+  </div>
+
+  <div id="overview">
+    <h2>Преимущества</h2>
+    <h4>с нами все проще</h4>
+
+    <div class="img">
+      <img src="https://www.mechta.kz/upload/iblock/f8c/f8c30f940432728d5359f8bf7d04a1bb.jpg" alt="">
+      <span>Лучшее изображение с NanoEdge</span>
+    </div>
+    <div class="img">
+      <img src="https://www.mechta.kz/upload/iblock/3be/3beda60b5d9869000fef060294045d1e.jpg" alt="">
+      <span>Повышайте свою производительность</span>
+    </div>
+  </div>
+
+  <div id="contacts">
+    <center><h5>Обратная связь</h5></center>
+    <form id="form_input">
+      <label for="name">Имя <span>*</span></label><br>
+      <input type="text" placeholder="Введите имя" name="name" id="name"><br>
+      <label for="email">Ваша почта <span>*</span></label><br>
+			<input type="email" placeholder="Введите email" name="email" id="email"><br>
+			<label for="message">Сообщение <span>*</span></label><br>
+			<textarea placeholder="Введите ваше сообщение" name="message" id="message"></textarea><br>
+			<div id="mess_send" class="btn">Отправить</div>
+    </form>
+  </div>
+
+  <div id="faq">
+    <div>
+      <span class="title">Советы при покупке ноутбука</span><br>
+      <span class="heading">Как выбрать ноутбук?</span>
+      <p>Выбор ноутбука должен начинаться с описания ваших требований для него. Исходя из требований и должны подбираться параметры. Как правило, игровой ноутбук или ноутбук для серьезной работы в фотошопе значительно отличается по мощности от ноутбука для работы в офисе или домашнего просмотра видео и Word файлов. Также в несколько раз отличается и цена.</p>
+      <span class="heading">Выбор ноутбука для дома или учёбы</span>
+      <p>Если вы выбираете ноутбук для дома или учёбы, то тут нужно учитывать будете ли вы играть в игры или нет. Если игры будут, то ниже будет специальный раздел про игровые ноутбуки.
+
+В остальном, кроме игр основные задачи домашнего ноутбука – это социальные сети, просмотр фильмов в хорошем качестве, мелкая работа в приложениях, легкие задачи в фотошопе, запуск программ и тому подобное.
+
+Никакой серьёзной работы с графикой и рендеринга видео. Выбирайте по стоимости около 300-500 долларов.</p>
+      <span class="heading">Выбор ноутбука для офиса</span>
+      <p>Для этих задач подойдут модели начального уровня с ценой около 300 долларов. При работе в офисе часто не требуется больших мощностей. Нужно просто, чтобы компьютер мог работать в браузере, открывать почту, файлы pdf и word, exel.
+
+Если вам нужен ноутбук для офиса, то подбирайте модели с матовым дисплеем размером 15,6. Так будет удобнее работать и меньше будут уставать глаза. Часто именно из-за усталости глаз и теряется производительность.
+
+Можно размер дисплея взять побольше, но чем больше дисплей, тем выше стоимость. Самый недорогой вариант и оптимальный – 15.6. Это золотая середина.</p>
+    </div>
+    <div>
+      <span class="title">Информация</span><br>
+      <span class="heading">Как выбрать ноутбук для работы?</span>
+      <p>Если вы выбираете ноутбук для работы, то сразу нужно уточнить какая будет работа. Это может быть переносной компьютер, который нужно брать с собой в офис или на встречи.
+
+Тогда на первый план выходит его вес, физические размеры и время автономной работы. Лучше рассмотреть модели 14 дюймов с ёмким аккумулятором.
+
+Если вы собираетесь работать в сложных программах на ноутбуке и запускать сложные приложения, то на первый план выходят совсем другие характеристики.</p>
+      <span class="heading">Как выбрать ноутбук для фотошопа и графики?</span>
+      <p>Для работы с графикой и видео в различных программах по типу Photoshop, CorelDRAW, 3dMax, рендеринга видео и фото на профессиональном уровне, на первое место выходит процессор, оперативная память и видеокарта.</p>
+      <span class="heading">Как выбрать ноутбук для игр?</span>
+      <p>Игровые ноутбуки и их выбор сводится к тем же важным деталям что и ноутбуки для работы. Самые важные детали это процессор и видеокарта</p>
+    </div>
+    <div>
+      <span class="title">Практическое руководство как выбрать ноутбук</span><br>
+      <span class="heading">Экран ноутбука</span>
+      <p>Оптимальный дисплей – 15,6 матовый. Если нужно больше мобильности и меньше вес, то смотрите 14 дюймов. Они удобнее, если нужно переносить компьютер, но 14 дюймов будет стоить немного дороже при схожих характеристиках, чем 15,6 дюймов. Поэтому оптимально 15,6.
+
+Чем меньше корпус, тем дороже цена ноутбука при одинаковой производительности. 17 дюймов мы не советуем, потому что лучше купить уже отдельный монитор, если нужен дисплей побольше и подключить его через кабель HDMI.</p>
+      <span class="heading">Оперативная память RAM при выборе ноутбука</span>
+      <p>Чем больше памяти, тем лучше. Минимальный размер это 4 Гб. Их может быть достаточно, но лучше купить 8 Гб. Сейчас это оптимальный размер. Оперативная память поможет работать на ноутбуке более комфортно и не испытывать недостатка ресурсов.
+
+Чем больше у вас памяти, тем больше вкладок в браузере и одновременно программ может быть открыто. Не будет тормозов и зависаний системы. Стандарт памяти сейчас DDR4. Нужно выбирать именно это поколение, а не DDR3.</p>
+      <span class="heading">Жесткий диск HDD или SSD диск</span>
+      <p>Лучше выбирать с диском SSD. Это современные быстрые диски, которые обеспечивают раз в 10 более быструю работу системы. Благодаря только этому улучшению вы получите значительный прирост скорости от вашего ноутбука. Программы будут открываться мгновенно и Windows загружаться за 5 секунд.
+        
+Часто после покупки сразу меняют HDD жесткий диск на SSD, а старый диск продают или используют как дополнительный. Если вы решите сделать так же, то лучше делать это через сервисный центр, чтобы не потерять гарантию.</p>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    function slowScroll(id) {
+      $('html, body').animate({
+        scrollTop: $(id).offset().top
+      }, 500);
+    }
+
+    $(document).on("scroll", function () {
+      if($(window).scrollTop() === 0)
+        $("header").removeClass("fixed");
+      else
+        $("header").attr("class", "fixed");
+    });
+  </script>
+</body>
+</html>
